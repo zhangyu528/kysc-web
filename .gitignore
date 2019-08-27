@@ -174,4 +174,3 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 # Vue
-build/
