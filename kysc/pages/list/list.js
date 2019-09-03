@@ -1,25 +1,34 @@
 // pages/list.js
+var api = require('../../api/api.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var page = this
+    api.getGoodCategory(function (result) {
+      page.setData({
+        tabs: result.data,
+        current: "0"
+      })
+    }, function (result) {
 
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
