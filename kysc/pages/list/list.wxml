@@ -1,6 +1,11 @@
 <!--pages/list.wxml-->
 <view>
- <i-tabs scroll current="{{current}}" >
-    <i-tab wx:for="{{tabs}}" key="{{item.cat_id}}" title="{{item.title}}"></i-tab>
- </i-tabs>
+  <i-tabs scroll current="{{current}}" bindchange="handleChange">
+      <i-tab wx:for="{{tabs}}" key="{{item.cat_id}}" title="{{item.title}}"></i-tab>
+  </i-tabs>
+  <mp-cells>
+    <mp-cell wx:for="{{goods}}" value="{{item.goods_info.name}}" footer="{{item.goods_info.sell_price}}">
+      <image slot="icon" style="width: 30px; height: 30px; background-color: #eeeeee;" mode="aspectFit" src="{{item.goods_info.image}}"></image>
+    </mp-cell>
+  </mp-cells>
 </view>

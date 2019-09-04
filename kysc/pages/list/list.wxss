@@ -1,5 +1,5 @@
 /* pages/list.wxss */
-.tab {
+/* .tab {
   width: 1000rpx;
   height: 100%;
   min-height: 100%;
@@ -38,4 +38,4 @@
 }
 .line.UnSel {
   background: #fff;
-}
+} */

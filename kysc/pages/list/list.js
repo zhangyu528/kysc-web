@@ -9,15 +9,38 @@ Page({
   data: {
   },
 
+  handleChange({ detail }) {
+    var page = this
+    page.setData({
+      current: detail.key
+    })
+    //获取list数据
+    api.getGoodInfos(detail.key, function (result) {
+      page.setData({
+        goods: result.data,
+      })
+    }, function (result) {
+
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var page = this
-    api.getGoodCategory(function (result) {
+    //获取tab数据
+    api.getGoodCategorys(function (result) {
       page.setData({
         tabs: result.data,
         current: "0"
+      })
+      //获取list数据
+      api.getGoodInfos("0", function (result) {
+        page.setData({
+          goods: result.data
+        })
+      }, function (result) {
+
       })
     }, function (result) {
 

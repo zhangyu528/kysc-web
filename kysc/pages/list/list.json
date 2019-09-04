@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "i-tabs":"../../iview-weapp-2.0.0/dist/tabs/index",
-    "i-tab": "../../iview-weapp-2.0.0/dist/tab/index"
+    "i-tabs": "../../iview-weapp-2.0.0/dist/tabs/index",
+    "i-tab": "../../iview-weapp-2.0.0/dist/tab/index",
+    "mp-cell": "../../weui-miniprogram/cell/cell",
+    "mp-cells": "../../weui-miniprogram/cells/cells"
   }
 }

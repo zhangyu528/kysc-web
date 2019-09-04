@@ -7,8 +7,20 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "kysc",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "日志"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }
