@@ -5,3 +5,12 @@
   width: 100%;
   z-index: 10;
 }
+.i-title-custom {
+  font-size: 12px!important;
+}
+.i-title-current-custom {
+  color: #1aad19!important;
+}
+.good-name {
+
+}
