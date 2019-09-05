@@ -8,7 +8,6 @@ function getGoodCategorys(onSuccess, onFail) {
       onSuccess(result)
     },
     fail: function(res) {
-      onFail(result)
     }
   })
 }

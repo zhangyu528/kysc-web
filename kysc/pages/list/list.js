@@ -7,17 +7,20 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isLoading: true
   },
 
   handleChange({ detail }) {
     var page = this
     page.setData({
-      current: detail.key
+      current: detail.key,
+      isLoading: true
     })
     //获取list数据
     api.getGoodInfos(detail.key, function (result) {
       page.setData({
         goods: result.data,
+        isLoading: false
       })
     }, function (result) {
 
@@ -37,7 +40,8 @@ Page({
       //获取list数据
       api.getGoodInfos("0", function (result) {
         page.setData({
-          goods: result.data
+          goods: result.data,
+          isLoading: false
         })
       }, function (result) {
 
