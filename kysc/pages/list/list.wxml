@@ -6,14 +6,19 @@
   <i-tabs scroll current="{{current}}" bindchange="handleChange" color="#1aad19">
       <i-tab i-title-class="i-title-custom" i-title-current-class="i-title-current-custom" wx:for="{{tabs}}" key="{{item.cat_id}}" title="{{item.title}}"></i-tab>
   </i-tabs>
-  <view class="list-item">
-    <mp-cells>
+  <view class="good-container">
+    <mp-cells class="cells">
       <mp-cell wx:for="{{goods}}">
-        <image slot="icon" style="width: 30px; height: 30px; background-color: #eeeeee;" mode="aspectFit" src="{{item.goods_info.image}}"></image>
-        <view class="good-name">{{item.goods_info.name}}</view>
-        <view class="good-price">单价:{{item.goods_info.sell_price}}</view>
-        <view class="good-amount">存货:{{item.goods_info.max_amount}}</view>
-        <view class="good-selling-cnt">已售:{{item.goods_info.selling_cnt}}</view>
+        <image slot="icon" class="good-avatar" mode="aspectFit" src="{{item.goods_info.image}}"></image>
+        <view class="good-info-container">
+          <view class="good-name">{{item.goods_info.name}}</view>
+          <view class="good-num-container">
+            <view class="good-amount">存货:{{item.goods_info.max_amount}}</view>
+            <view class="good-selling-cnt">已售:{{item.goods_info.selling_cnt}}</view>
+          </view>
+          <view class="good-price">单价:{{item.goods_info.sell_price}}</view>
+        </view>
+
         <button class="good-sell" slot="footer" type="primary" size="mini">预付预定</button>
       </mp-cell>
     </mp-cells>

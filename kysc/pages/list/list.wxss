@@ -11,15 +11,39 @@
   width: 100%;
   z-index: 10;
 }
-.list-item {
-  background-color: white;
-}
+
 .i-title-custom {
   font-size: 12px!important;
 }
 .i-title-current-custom {
   color: #1aad19!important;
 }
+
+.good-container {
+  background-color: white;
+}
+.cells {
+  font-size: 28rpx;
+  color: #666;
+}
+.good-avatar {
+  width: 120rpx;
+  height: 120rpx; 
+  border-radius: 50%;
+  background-color: #eeeeee;
+}
+.good-info-container {
+  margin-left: 20rpx;
+}
 .good-name {
 
+}
+.good-num-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.good-selling-cnt {
+  margin-left: 10rpx;
 }

@@ -23,7 +23,12 @@
 
 }
 
-.useritem {
+.cells-container {
   margin-top: 6rpx;
   background-color: white;
+}
+
+.cells {
+  font-size: 28rpx;
+  color: #aaa;
 }
