@@ -28,6 +28,25 @@ function getGoodInfos(catId, onSuccess, onFail) {
     }
   })
 }
+//微信用户授权
+function wxAuth(code, sessionKey, encryptedData, iv, onSuccess, onFail) {
+  wx.request({
+    url: 'http://localhost:5000/auth/wx',
+    method: 'POST',
+    data: {
+      code: code,
+      sessionKey: sessionKey,
+      encryptedData: encryptedData,
+      iv: iv
+    },
+    success: function (res) {
+      
+    },
+    fail: function (res) {
+
+    }
+  })
+}
 // 导出模块
 module.exports.getGoodCategorys = getGoodCategorys
 module.exports.getGoodInfos = getGoodInfos
