@@ -1,4 +1,6 @@
 // pages/my/my.js
+var api = require('../../api/api.js')
+
 //获取应用实例
 const app = getApp()
 
@@ -98,6 +100,9 @@ Page({
     if (!e.detail.userInfo) return
 
     console.log(e)
+    var iv = e.detail.iv
+    var encryptedData = e.detail.encryptedData
+
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -105,7 +110,10 @@ Page({
     })
     wx.login({
       success: res => {
+        console.log(res)
         console.log(res.code)
+        api.wxAuth(res.code, encryptedData, iv, function(result) {
+        })
       }
     })
   }
