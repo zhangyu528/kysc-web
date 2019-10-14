@@ -2,7 +2,7 @@
 function getGoodCategorys(onSuccess, onFail) {
   wx.request({
     url: 'http://localhost:5000/good/category',
-    method: 'POST',
+    method: 'GET',
     success: function(res) {
       var result = res.data
       onSuccess(result)

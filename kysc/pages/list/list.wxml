@@ -9,14 +9,14 @@
   <view class="good-container">
     <mp-cells class="cells">
       <mp-cell wx:for="{{goods}}">
-        <image slot="icon" class="good-avatar" mode="aspectFit" src="{{item.goods_info.image}}"></image>
+        <image slot="icon" class="good-avatar" mode="aspectFit" src="http://47.94.1.127:8010{{item.image}}"></image>
         <view class="good-info-container">
-          <view class="good-name">{{item.goods_info.name}}</view>
+          <view class="good-name">{{item.name}}</view>
           <view class="good-num-container">
-            <view class="good-amount">存货:{{item.goods_info.max_amount}}</view>
-            <view class="good-selling-cnt">已售:{{item.goods_info.selling_cnt}}</view>
+            <view class="good-amount">存货:{{item.max_amount}}</view>
+            <view class="good-selling-cnt">已售:{{item.selling_cnt}}</view>
           </view>
-          <view class="good-price">单价:{{item.goods_info.sell_price}}</view>
+          <view class="good-price">单价:{{item.sell_price}}</view>
         </view>
 
         <button class="good-sell" slot="footer" type="primary" size="mini">预付预定</button>
