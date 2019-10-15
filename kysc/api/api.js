@@ -28,6 +28,24 @@ function getGoodInfos(catId, onSuccess, onFail) {
     }
   })
 }
+
+//获取商品详细信息
+function getGoodDetail(actId, onSuccess, onFail) {
+  wx.request({
+    url: 'http://localhost:5000/good/detail',
+    method: 'POST',
+    data: {
+      act_id: actId
+    },
+    success: function (res) {
+      var result = res.data
+      onSuccess(result)
+    },
+    fail: function (res) {
+
+    }
+  })
+}
 //微信用户授权
 function wxAuth(code, encryptedData, iv, onSuccess, onFail) {
   wx.request({
@@ -50,4 +68,5 @@ function wxAuth(code, encryptedData, iv, onSuccess, onFail) {
 // 导出模块
 module.exports.getGoodCategorys = getGoodCategorys
 module.exports.getGoodInfos = getGoodInfos
+module.exports.getGoodDetail = getGoodDetail
 module.exports.wxAuth = wxAuth

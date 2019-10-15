@@ -1,4 +1,4 @@
-// pages/list.js
+// pages/detail.js
 var api = require('../../api/api.js')
 
 Page({
@@ -10,41 +10,16 @@ Page({
     isLoading: true
   },
 
-  handleChange({ detail }) {
-    var page = this
-    page.setData({
-      current: detail.key,
-      isLoading: true
-    })
-    //获取list数据
-    api.getGoodInfos(detail.key, function (result) {
-      page.setData({
-        goods: result.data,
-        isLoading: false
-      })
-    }, function (result) {
-
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var page = this
-    //获取tab数据
-    api.getGoodCategorys(function (result) {
+    //获取detail数据
+    api.getGoodDetail(options.productId, function (result) {
       page.setData({
-        tabs: result.data,
-        current: "0"
-      })
-      //获取list数据
-      api.getGoodInfos("0", function (result) {
-        page.setData({
-          goods: result.data,
-          isLoading: false
-        })
-      }, function (result) {
-
+        detail: result.data,
+        isLoading: false
       })
     }, function (result) {
 
@@ -55,7 +30,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -98,12 +73,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  tapToDetail: function (event) {
-    var productId = event.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '/pages/detail/detail?productId='+productId,
-    })
   }
 })
