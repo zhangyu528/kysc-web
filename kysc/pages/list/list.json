@@ -4,6 +4,7 @@
     "i-tab": "../../iview-weapp-2.0.0/dist/tab/index",
     "mp-cell": "../../weui-miniprogram/cell/cell",
     "mp-cells": "../../weui-miniprogram/cells/cells",
-    "mp-loading": "../../weui-miniprogram/loading/loading"
+    "mp-loading": "../../weui-miniprogram/loading/loading",
+    "mp-dialog": "../../weui-miniprogram/dialog/dialog"
   }
 }

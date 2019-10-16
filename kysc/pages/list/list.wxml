@@ -19,9 +19,27 @@
           <view class="good-price">单价:{{item.sell_price}}</view>
         </view>
 
-        <button class="good-sell" slot="footer" type="primary" size="mini">预付预定</button>
+        <button class="good-sell" slot="footer" type="primary" size="mini" catchtap="tapToPreBuy" data-id="{{item.id}}">预付预定</button>
       </mp-cell>
     </mp-cells>
   </view>
 
 </view>
+
+<mp-dialog title="test" show="{{dialogShow}}" bindbuttontap="tapDialogButton" mask-closable>
+    <view class="detail">
+      <view class="title">
+        <label class="name">{{detail.name}}</label>
+        <label class="cnt">库存 {{detail.selling_cnt}}</label>
+      </view>
+      <label class="price">¥ {{detail.sell_price}}</label>
+      <view class="hint">
+        <label class="hint-title">温馨提示</label>
+        <view class="hint-content">
+            <label>1.请大家少食多餐：根据自身需要，一次拿合适的量。</label>
+            <label>2.所购商品的质保时间（自动确认时间）如下表。</label>
+        </view>
+    </view>
+    <button class="sell" type="primary" size="mini" catchtap="tapToDoBuy">预付预定</button>
+  </view>
+</mp-dialog>

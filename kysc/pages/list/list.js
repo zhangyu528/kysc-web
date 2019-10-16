@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLoading: true
+    isLoading: true,
+    dialogShow: false,
   },
 
   handleChange({ detail }) {
@@ -104,6 +105,23 @@ Page({
     var productId = event.currentTarget.dataset.id
     wx.navigateTo({
       url: '/pages/detail/detail?productId='+productId,
+    })
+  },
+
+  tapToPreBuy: function (event) {
+    this.setData({
+      dialogShow: true
+    })
+    var productId = event.currentTarget.dataset.id
+    var page = this
+    //获取detail数据
+    api.getGoodDetail(productId, function (result) {
+      page.setData({
+        detail: result.data,
+        isLoading: false
+      })
+    }, function (result) {
+
     })
   }
 })
