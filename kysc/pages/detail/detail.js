@@ -1,6 +1,9 @@
 // pages/detail.js
 var api = require('../../api/api.js')
 
+//获取应用实例
+const app = getApp()
+
 Page({
 
   /**
@@ -73,5 +76,15 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  onPrePay: function () {
+    api.prePay(this.data.detail.id, 1, 
+    function (result) {
+
+    },
+    function (result) {
+
+    })
   }
 })

@@ -99,7 +99,6 @@ Page({
   getUserInfo: function (e) {
     if (!e.detail.userInfo) return
 
-    console.log(e)
     var iv = e.detail.iv
     var encryptedData = e.detail.encryptedData
 
@@ -108,10 +107,9 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+
     wx.login({
       success: res => {
-        console.log(res)
-        console.log(res.code)
         api.wxAuth(res.code, encryptedData, iv, function(result) {
         })
       }

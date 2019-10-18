@@ -12,5 +12,5 @@
         <label>2.所购商品的质保时间（自动确认时间）如下表。</label>
     </view>
   </view>
-  <button class="sell" type="primary" size="mini">预付预定</button>
+  <button class="sell" type="primary" size="mini" catchtap="onPrePay">预付预定</button>
 </view>

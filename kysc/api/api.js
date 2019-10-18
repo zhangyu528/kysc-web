@@ -1,3 +1,6 @@
+//获取应用实例
+const app = getApp()
+
 //获取种类列表
 function getGoodCategorys(onSuccess, onFail) {
   wx.request({
@@ -21,6 +24,7 @@ function getGoodInfos(catId, onSuccess, onFail) {
       cat_id: catId
     },
     success: function (res) {
+      console.log(res)
       var result = res.data
       onSuccess(result)
     },
@@ -57,6 +61,8 @@ function wxAuth(code, encryptedData, iv, onSuccess, onFail) {
       iv: iv
     },
     success: function (res) {
+      console.log(res)
+      app.globalData.token = res.data.content.token
       var result = res.data
       onSuccess(result)
     },
@@ -65,8 +71,33 @@ function wxAuth(code, encryptedData, iv, onSuccess, onFail) {
     }
   })
 }
+
+//预Pay
+function prePay(actId, num, onSuccess, onFail) {
+  wx.request({
+    url: 'http://localhost:5000/order/prePay',
+    method: 'POST',
+    header: {
+      'Authorization': app.globalData.token
+    },
+    data: {
+      act_id: actId,
+      num: num
+    },
+    success: function (res) {
+      var result = res.data
+      onSuccess(result)
+    },
+    fail: function (res) {
+
+    }
+  })
+
+}
+
 // 导出模块
 module.exports.getGoodCategorys = getGoodCategorys
 module.exports.getGoodInfos = getGoodInfos
 module.exports.getGoodDetail = getGoodDetail
 module.exports.wxAuth = wxAuth
+module.exports.prePay = prePay
